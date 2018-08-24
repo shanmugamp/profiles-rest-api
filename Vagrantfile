@@ -10,6 +10,9 @@ Vagrant.configure("2") do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
+  config.ssh.username = "ubuntu"
+  #config.ssh.password = "welcome"
+
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/xenial64"
@@ -17,6 +20,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", host_ip: "127.0.0.1", guest: 8080, host: 8080
 
   config.vm.provision "shell", inline: <<-SHELL
+
     # Update and upgrade the server packages.
     sudo apt-get update
     sudo apt-get -y upgrade
