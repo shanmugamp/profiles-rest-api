@@ -33,7 +33,7 @@ cd $PROJECT_BASE_PATH/profiles-rest-api/src
 cp $PROJECT_BASE_PATH/profiles-rest-api/deploy/supervisor_profiles_api.conf /etc/supervisor/conf.d/profiles_api.conf
 supervisorctl reread
 supervisorctl update
-supervisorctl restart profiles_api
+supervisorctl restart profiles-api
 
 # Setup nginx to make our application accessible.
 cp $PROJECT_BASE_PATH/profiles-rest-api/deploy/nginx_profiles_api.conf /etc/nginx/sites-available/profiles_api.conf
